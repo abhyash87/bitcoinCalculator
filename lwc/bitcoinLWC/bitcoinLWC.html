@@ -1,0 +1,29 @@
+<!--
+ - Created by AbhyashTimsina on 7/11/2021.
+ -->
+
+<template>
+    <lightning-card title="Bitcoin Value Comparison">
+        <div style="text-align: right; padding-right: 20px"> Rate: {rateValue} </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-combobox
+                    name="comparisonCurrencyCodeValue"
+                    label="Comparison Currency Code"
+                    value={comparisonCurrencyCodeValue}
+                    placeholder="Select Currency Code"
+                    options={countryCodeOptions}
+                    onchange={handleComparisonCurrencyChange}
+            ></lightning-combobox>
+            <!--   <lightning-input type="text" label="Comparison Currency Code" name="comparisonCurrencyCodeValue" value={comparisonCurrencyCodeValue} max-length="3" onchange={handleComparisonCurrencyChange}></lightning-input>  -->
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="number" name="bitcoinValue" label="Bitcoin Value" value={bitcoinValue} step="0.01" onchange={handleBitcoinValueChange}></lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="number" name="currencyValue" label="Currency Value" value={currencyValue} formatter="currency" step="0.01" onchange={handleCurrencyValueChange}></lightning-input>
+        </div>
+        <div style="text-align: right; padding-right: 20px"> <lightning-button variant="brand" label="Create Record" title="Create Record" onclick={createRecord} class="slds-m-left_x-small"></lightning-button> </div>
+
+    </lightning-card>
+</template>
